@@ -15,21 +15,22 @@ OWNER?=zhushaojun
 # 	base-notebook
 
 # Images that can only be built on the amd64 architecture (aka. x86_64)
-AMD64_ONLY_IMAGES:= \
-	# base-notebook \
-	# minimal-notebook \
-	# scipy-notebook \
-	# tensorflow-notebook \
-	# pytorch-lts
-	base-notebook
+# AMD64_ONLY_IMAGES:= \
+# 	# base-notebook \
+# 	# minimal-notebook \
+# 	# scipy-notebook \
+# 	# tensorflow-notebook \
+# 	# pytorch-lts
+# 	base-notebook
+AMD64_ONLY_IMAGES := base-notebook
 # All of the images
-ALL_IMAGES:= \
+# ALL_IMAGES:= \
 	# base-notebook \
 	# minimal-notebook \
 	# scipy-notebook \
 	# tensorflow-notebook \
 	# pytorch-lts
-	base-notebook
+ALL_IMAGES := base-notebook
 
 # Enable BuildKit for Docker build
 export DOCKER_BUILDKIT:=1
