@@ -8,11 +8,8 @@ on:
     paths:
       - ".github/workflows/hub-overview.yml"
 
-      - "all-spark-notebook/README.md"
       - "base-notebook/README.md"
-      - "datascience-notebook/README.md"
       - "minimal-notebook/README.md"
-      - "pyspark-notebook/README.md"
       - "scipy-notebook/README.md"
       - "tensorflow-notebook/README.md"
 
