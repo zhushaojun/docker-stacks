@@ -24,10 +24,10 @@ AMD64_ONLY_IMAGES:= \
 # All of the images
 ALL_IMAGES:= \
 	base-notebook \
-	minimal-notebook
-# scipy-notebook \
-# tensorflow-notebook \
-# pytorch-lts
+	minimal-notebook \
+	scipy-notebook \
+	tensorflow-notebook \
+	pytorch-lts
 
 # Enable BuildKit for Docker build
 export DOCKER_BUILDKIT:=1

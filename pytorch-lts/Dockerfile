@@ -9,12 +9,13 @@ LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
 # Fix DL4006
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-# Install Tensorflow
-# RUN mamba install --quiet --yes -c pytorch-lts \
-#     'pytorch' \
-#     'torchvision' \
-#     'torchaudio' \
-#     'cudatoolkit=10.2' && \
-#     mamba clean --all -f -y && \
-#     fix-permissions "${CONDA_DIR}" && \
-#     fix-permissions "/home/${NB_USER}"
+# Install pytorch
+RUN mamba install --quiet --yes -c pytorch-lts \
+    'pytorch' \
+    'torchvision' \
+    'torchaudio' \
+    'cudatoolkit=10.2'
+
+RUN mamba clean --all -f -y && \
+    fix-permissions "${CONDA_DIR}" && \
+    fix-permissions "/home/${NB_USER}"
