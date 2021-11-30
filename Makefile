@@ -22,9 +22,9 @@ AMD64_ONLY_IMAGES:= \
 	tensorflow-notebook \
 	pytorch-lts
 # All of the images
-# ALL_IMAGES:= \
-# 	base-notebook \
-# 	minimal-notebook
+ALL_IMAGES:= \
+	base-notebook \
+	minimal-notebook
 # scipy-notebook \
 # tensorflow-notebook \
 # pytorch-lts
