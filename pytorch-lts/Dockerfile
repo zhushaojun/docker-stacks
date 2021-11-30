@@ -14,7 +14,7 @@ RUN mamba install --quiet --yes -c pytorch-lts \
     'pytorch' \
     'torchvision' \
     'torchaudio' \
-    'torchtext' && \
+    'cudatoolkit=10.2' && \
     mamba clean --all -f -y && \
     fix-permissions "${CONDA_DIR}" && \
     fix-permissions "/home/${NB_USER}"
