@@ -21,6 +21,7 @@ AMD64_ONLY_IMAGES:= \
 	scipy-notebook \
 	tensorflow-notebook \
 	pytorch-lts
+
 # All of the images
 ALL_IMAGES:= \
 	base-notebook \
@@ -138,11 +139,10 @@ docs: ## build HTML documentation
 	sphinx-build docs/ docs/_build/
 
 
-##python3 -m tagging.create_manifests --short-image-name "$(notdir $@)" --owner "$(OWNER)" --wiki-path "$(WIKI_PATH)"
 hook/%: WIKI_PATH?=../wiki
 hook/%: ## run post-build hooks for an image
 	python3 -m tagging.tag_image --short-image-name "$(notdir $@)" --owner "$(OWNER)" && \
-	python3 -m tagging.create_manifests --short-image-name "$(notdir $@)" --owner "$(OWNER)"
+	python3 -m tagging.create_manifests --short-image-name "$(notdir $@)" --owner "$(OWNER)" --wiki-path "$(WIKI_PATH)"
 hook-all: $(foreach I, $(ALL_IMAGES), hook/$(I)) ## run post-build hooks for all images
 
 
