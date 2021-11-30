@@ -29,11 +29,8 @@ on:
     paths:
       - ".github/workflows/docker-amd64.yml"
 
-      - "all-spark-notebook/**"
       - "base-notebook/**"
-      - "datascience-notebook/**"
       - "minimal-notebook/**"
-      - "pyspark-notebook/**"
       - "scipy-notebook/**"
       - "tensorflow-notebook/**"
 

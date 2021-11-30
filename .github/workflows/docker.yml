@@ -8,11 +8,8 @@ on:
     paths:
       - ".github/workflows/docker.yml"
 
-      - "all-spark-notebook/**"
       - "base-notebook/**"
-      - "datascience-notebook/**"
       - "minimal-notebook/**"
-      - "pyspark-notebook/**"
       - "scipy-notebook/**"
       - "tensorflow-notebook/**"
 
@@ -29,11 +26,8 @@ on:
     paths:
       - ".github/workflows/docker.yml"
 
-      - "all-spark-notebook/**"
       - "base-notebook/**"
-      - "datascience-notebook/**"
       - "minimal-notebook/**"
-      - "pyspark-notebook/**"
       - "scipy-notebook/**"
       - "tensorflow-notebook/**"
 

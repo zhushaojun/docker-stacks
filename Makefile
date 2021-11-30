@@ -12,24 +12,19 @@ OWNER?=jupyter
 # - linux/amd64
 # - linux/arm64
 MULTI_IMAGES:= \
-	base-notebook \
-	minimal-notebook \
-	scipy-notebook \
-	pyspark-notebook \
-	all-spark-notebook
+	base-notebook
+
 # Images that can only be built on the amd64 architecture (aka. x86_64)
 AMD64_ONLY_IMAGES:= \
-	datascience-notebook \
+	minimal-notebook \
+	scipy-notebook \
 	tensorflow-notebook
 # All of the images
 ALL_IMAGES:= \
 	base-notebook \
 	minimal-notebook \
 	scipy-notebook \
-	tensorflow-notebook \
-	datascience-notebook \
-	pyspark-notebook \
-	all-spark-notebook
+	tensorflow-notebook
 
 # Enable BuildKit for Docker build
 export DOCKER_BUILDKIT:=1
