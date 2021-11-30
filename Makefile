@@ -4,7 +4,7 @@
 
 # Use bash for inline if-statements in arch_patch target
 SHELL:=bash
-OWNER?=jupyter
+OWNER?=zhushaojun
 
 # Need to list the images in build dependency order
 
@@ -18,13 +18,15 @@ MULTI_IMAGES:= \
 AMD64_ONLY_IMAGES:= \
 	minimal-notebook \
 	scipy-notebook \
-	tensorflow-notebook
+	tensorflow-notebook \
+	pytorch-lts
 # All of the images
 ALL_IMAGES:= \
 	base-notebook \
 	minimal-notebook \
 	scipy-notebook \
-	tensorflow-notebook
+	tensorflow-notebook \
+	pytorch-lts
 
 # Enable BuildKit for Docker build
 export DOCKER_BUILDKIT:=1

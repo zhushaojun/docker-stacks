@@ -33,6 +33,7 @@ on:
       - "minimal-notebook/**"
       - "scipy-notebook/**"
       - "tensorflow-notebook/**"
+      - "pytorch-lts/**"
 
       - "tagging/**"
       - "test/**"
