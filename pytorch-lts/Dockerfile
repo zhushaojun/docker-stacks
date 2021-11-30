@@ -10,11 +10,11 @@ LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Install Tensorflow
-RUN mamba install --quiet --yes -c pytorch-lts \
-    'pytorch' \
-    'torchvision' \
-    'torchaudio' \
-    'cudatoolkit=10.2' && \
-    mamba clean --all -f -y && \
-    fix-permissions "${CONDA_DIR}" && \
-    fix-permissions "/home/${NB_USER}"
+# RUN mamba install --quiet --yes -c pytorch-lts \
+#     'pytorch' \
+#     'torchvision' \
+#     'torchaudio' \
+#     'cudatoolkit=10.2' && \
+#     mamba clean --all -f -y && \
+#     fix-permissions "${CONDA_DIR}" && \
+#     fix-permissions "/home/${NB_USER}"
