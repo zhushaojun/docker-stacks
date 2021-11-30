@@ -13,7 +13,6 @@ on:
       - "datascience-notebook/**"
       - "minimal-notebook/**"
       - "pyspark-notebook/**"
-      - "r-notebook/**"
       - "scipy-notebook/**"
       - "tensorflow-notebook/**"
 
@@ -35,7 +34,6 @@ on:
       - "datascience-notebook/**"
       - "minimal-notebook/**"
       - "pyspark-notebook/**"
-      - "r-notebook/**"
       - "scipy-notebook/**"
       - "tensorflow-notebook/**"
 
