@@ -15,22 +15,20 @@ OWNER?=zhushaojun
 # 	base-notebook
 
 # Images that can only be built on the amd64 architecture (aka. x86_64)
-# AMD64_ONLY_IMAGES:= \
-# 	# base-notebook \
-# 	# minimal-notebook \
+AMD64_ONLY_IMAGES:= \
+	base-notebook \
+	minimal-notebook
 # 	# scipy-notebook \
 # 	# tensorflow-notebook \
 # 	# pytorch-lts
 # 	base-notebook
-AMD64_ONLY_IMAGES := base-notebook
 # All of the images
-# ALL_IMAGES:= \
-	# base-notebook \
-	# minimal-notebook \
-	# scipy-notebook \
-	# tensorflow-notebook \
-	# pytorch-lts
-ALL_IMAGES := base-notebook
+ALL_IMAGES:= \
+	base-notebook \
+	minimal-notebook
+# scipy-notebook \
+# tensorflow-notebook \
+# pytorch-lts
 
 # Enable BuildKit for Docker build
 export DOCKER_BUILDKIT:=1
@@ -141,11 +139,11 @@ docs: ## build HTML documentation
 	sphinx-build docs/ docs/_build/
 
 
-
+##python3 -m tagging.create_manifests --short-image-name "$(notdir $@)" --owner "$(OWNER)" --wiki-path "$(WIKI_PATH)"
 hook/%: WIKI_PATH?=../wiki
 hook/%: ## run post-build hooks for an image
 	python3 -m tagging.tag_image --short-image-name "$(notdir $@)" --owner "$(OWNER)" && \
-	python3 -m tagging.create_manifests --short-image-name "$(notdir $@)" --owner "$(OWNER)" --wiki-path "$(WIKI_PATH)"
+	python3 -m tagging.create_manifests --short-image-name "$(notdir $@)" --owner "$(OWNER)"
 hook-all: $(foreach I, $(ALL_IMAGES), hook/$(I)) ## run post-build hooks for all images
 
 
