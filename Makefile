@@ -28,7 +28,7 @@ ALL_IMAGES:= \
 	scipy-notebook \
 	tensorflow-notebook \
 	mxnet-notebook \
-	pytorch-lts
+	pytorch-notebook
 
 # Enable BuildKit for Docker build
 export DOCKER_BUILDKIT:=1

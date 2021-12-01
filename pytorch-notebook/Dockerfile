@@ -14,9 +14,8 @@ RUN conda install --quiet --yes -c pytorch \
     'pytorch' \
     'torchvision' \
     'torchaudio' \
+    'torchtext' \
     'cudatoolkit=10.2' && \
-    conda clean --all -f -y
-
-RUN mamba clean --all -f -y && \
+    conda clean --all -f -y && \
     fix-permissions "${CONDA_DIR}" && \
     fix-permissions "/home/${NB_USER}"

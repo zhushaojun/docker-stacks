@@ -12,7 +12,8 @@ on:
       - "minimal-notebook/**"
       - "scipy-notebook/**"
       - "tensorflow-notebook/**"
-      - "pytorch-lts/**"
+      - "pytorch-notebook/**"
+      - "mxnet-notebook/**"
 
 
       - "tagging/**"
@@ -32,7 +33,8 @@ on:
       - "minimal-notebook/**"
       - "scipy-notebook/**"
       - "tensorflow-notebook/**"
-      - "pytorch-lts/**"
+      - "pytorch-notebook/**"
+      - "mxnet-notebook/**"
 
       - "tagging/**"
       - "test/**"
