@@ -83,6 +83,7 @@ WORKDIR /tmp
 # For example, people from mainland China could set it as
 # https://mirrors.tuna.tsinghua.edu.cn/github-release/conda-forge/miniforge/LatestRelease
 ARG CONDA_MIRROR=https://github.com/conda-forge/miniforge/releases/latest/download
+https://github.com/conda-forge/miniforge/releases/download/4.10.3-7/Mambaforge-4.10.3-7-Linux-x86_64.sh
 
 # ---- Miniforge installer ----
 # Check https://github.com/conda-forge/miniforge/releases

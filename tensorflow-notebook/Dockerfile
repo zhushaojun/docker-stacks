@@ -13,7 +13,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN conda install --quiet --yes \
     'tensorflow' && \
     conda clean --all -f -y && \
-    pip install –no-cache-dir autokeras & \
-    rm -fr ~/.cache & \
+    pip install –no-cache-dir autokeras && \
+    rm -fr ~/.cache && \
     fix-permissions "${CONDA_DIR}" && \
     fix-permissions "/home/${NB_USER}"

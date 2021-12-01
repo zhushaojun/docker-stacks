@@ -17,7 +17,6 @@ on:
       - "auto-sklearn-notebook/**"
       - "pycaret-notebook/**"
 
-
       - "tagging/**"
       - "test/**"
       - "conftest.py"

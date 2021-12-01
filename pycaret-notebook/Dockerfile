@@ -10,7 +10,7 @@ LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Install pycaret
-RUN pip install –no-cache-dir pycaret[full] & \
-    rm -fr ~/.cache & \
+RUN pip install –no-cache-dir pycaret[full] && \
+    rm -fr ~/.cache && \
     fix-permissions "${CONDA_DIR}" && \
     fix-permissions "/home/${NB_USER}"
