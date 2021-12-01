@@ -1,6 +1,6 @@
 # Copyright (c) Jupyter Development Team.
 # Distributed under the terms of the Modified BSD License.
-ARG OWNER=zhushaojun
+ARG OWNER=jupyter
 ARG BASE_CONTAINER=$OWNER/scipy-notebook
 FROM $BASE_CONTAINER
 
@@ -9,16 +9,8 @@ LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
 # Fix DL4006
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-# Install pytorch
-RUN mamba install --quiet --yes -c pytorch -c fastchan \
-    'pytorch' \
-    'torchvision' \
-    'torchaudio' \
-    'torchtext' \
-    'fastai' \
-    'cudatoolkit=10.2' && \
-    mamba clean --all -f -y && \
-    pip install –no-cache-dir pytorch-lightning & \
+# Install pycaret
+RUN pip install –no-cache-dir pycaret[full] & \
     rm -fr ~/.cache & \
     fix-permissions "${CONDA_DIR}" && \
     fix-permissions "/home/${NB_USER}"

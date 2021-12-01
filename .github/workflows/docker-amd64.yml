@@ -14,6 +14,8 @@ on:
       - "tensorflow-notebook/**"
       - "pytorch-notebook/**"
       - "mxnet-notebook/**"
+      - "auto-sklearn-notebook/**"
+      - "pycaret-notebook/**"
 
 
       - "tagging/**"
@@ -35,6 +37,8 @@ on:
       - "tensorflow-notebook/**"
       - "pytorch-notebook/**"
       - "mxnet-notebook/**"
+      - "auto-sklearn-notebook/**"
+      - "pycaret-notebook/**"
 
       - "tagging/**"
       - "test/**"
