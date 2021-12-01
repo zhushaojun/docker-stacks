@@ -11,7 +11,6 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Install Tensorflow
 RUN mamba install --quiet --yes -c conda-forge \
-    'auto-gxx_linux-64' \
     'gcc_linux-64' \
     'swig' \
     'auto-sklearn' && \
