@@ -10,10 +10,10 @@ LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Install mxnet and autogluon
-RUN mamba install --quiet --yes \
+RUN conda install --quiet --yes \
     'cudatoolkit=10.2' \
     'python=3.7' && \
-    mamba clean --all -f -y && \
+    conda clean --all -f -y && \
     pip install –no-cache-dir mxnet-cu102==1.7.0 autogluon & \
     rm -fr ~/.cache & \
     fix-permissions "${CONDA_DIR}" && \
