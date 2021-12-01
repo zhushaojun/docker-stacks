@@ -3,7 +3,7 @@
 
 # Ubuntu 20.04 (focal)
 # https://hub.docker.com/_/ubuntu/?tab=tags&name=focal
-ARG ROOT_CONTAINER=nvidia/cuda:11.4.2-runtime-ubuntu20.04
+ARG ROOT_CONTAINER=nvidia/cuda:10.2-runtime-ubuntu18.04
 
 FROM $ROOT_CONTAINER
 
@@ -21,9 +21,12 @@ USER root
 # features (e.g., download as all possible file formats)
 # Install tini: init for containers
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get update --yes && \
+ENV TINI_VERSION v0.19.0
+
+RUN ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /usr/local/bin/tini && \
+    chmod +x /usr/local/bin/tini && \
+    apt-get update --yes && \
     apt-get install --yes --no-install-recommends \
-    tini \
     wget \
     ca-certificates \
     sudo \
@@ -53,8 +56,8 @@ RUN chmod a+rx /usr/local/bin/fix-permissions
 # Enable prompt color in the skeleton .bashrc before creating the default NB_USER
 # hadolint ignore=SC2016
 RUN sed -i 's/^#force_color_prompt=yes/force_color_prompt=yes/' /etc/skel/.bashrc && \
-   # Add call to conda init script see https://stackoverflow.com/a/58081608/4413446
-   echo 'eval "$(command conda shell.bash hook 2> /dev/null)"' >> /etc/skel/.bashrc
+    # Add call to conda init script see https://stackoverflow.com/a/58081608/4413446
+    echo 'eval "$(command conda shell.bash hook 2> /dev/null)"' >> /etc/skel/.bashrc
 
 # Create NB_USER with name jovyan user with UID=1000 and in the 'users' group
 # and make sure these dirs are writable by the `users` group.
