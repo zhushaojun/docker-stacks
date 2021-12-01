@@ -10,14 +10,14 @@ LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Install pytorch
-RUN mamba install --quiet --yes -c pytorch -c fastchan \
+RUN conda install --quiet --yes -c pytorch -c fastchan \
     'pytorch' \
     'torchvision' \
     'torchaudio' \
     'torchtext' \
     'fastai' \
     'cudatoolkit=10.2' && \
-    mamba clean --all -f -y && \
+    conda clean --all -f -y && \
     pip install –no-cache-dir pytorch-lightning & \
     rm -fr ~/.cache & \
     fix-permissions "${CONDA_DIR}" && \

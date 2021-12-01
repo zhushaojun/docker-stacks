@@ -10,9 +10,9 @@ LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Install Tensorflow
-RUN mamba install --quiet --yes \
+RUN conda install --quiet --yes \
     'tensorflow' && \
-    mamba clean --all -f -y && \
+    conda clean --all -f -y && \
     pip install –no-cache-dir autokeras & \
     rm -fr ~/.cache & \
     fix-permissions "${CONDA_DIR}" && \
