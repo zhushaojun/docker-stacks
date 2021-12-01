@@ -11,7 +11,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Install Tensorflow
 RUN mamba install --quiet --yes \
-    'tensorflow' && \
+    'tensorflow<2.6' && \
     mamba clean --all -f -y && \
     pip install autokeras  --no-cache-dir && \
     rm -fr ~/.cache && \
