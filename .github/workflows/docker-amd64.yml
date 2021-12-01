@@ -69,8 +69,12 @@ jobs:
           # Full logs for CI build
           BUILDKIT_PROGRESS: plain
 
-      - name: Test Docker Images
-        run: make -C main test-all
+      # - name: Test Docker Images
+      #   run: make -C main test-all
+
+      - name: Run Post-Build Hooks
+        id: hook-all
+        run: make -C main hook-all
 
 
       - name: Login to Docker Hub
