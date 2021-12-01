@@ -10,7 +10,7 @@ LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Install pytorch
-RUN mamba install --quiet --yes -c pytorch -c fastchan \
+RUN mamba install --quiet --yes -c pytorch -c fastai -c conda-forge \
     'pytorch' \
     'torchvision' \
     'torchaudio' \
