@@ -11,7 +11,8 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Install mxnet and autogluon
 RUN mamba install --quiet --yes \
-    'cudatoolkit=10.2' && \
+    'cudatoolkit=10.2' \
+    'python=3.7" && \
     mamba clean --all -f -y && \
     pip install mxnet-cu102==1.7.0 autogluon --no-cache-dir && \
     rm -fr ~/.cache && \
