@@ -14,7 +14,7 @@ RUN mamba install --quiet --yes -c pytorch \
     'pytorch' \
     'torchvision' \
     'torchaudio' \
-    'torchtext' \
+    # 'torchtext' \
     'cudatoolkit=10.2' && \
     mamba clean --all -f -y && \
     pip install pytorch-lightning  --no-cache-dir && \
