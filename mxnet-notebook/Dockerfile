@@ -9,14 +9,12 @@ LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
 # Fix DL4006
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-# Install pytorch
-RUN mamba install --quiet --yes -c pytorch-lts \
-    'pytorch' \
-    'torchvision' \
-    'torchaudio' \
-    'cudatoolkit=10.2' && \
-    mamba clean --all -f -y
-
-RUN mamba clean --all -f -y && \
+# Install mxnet and autogluon
+RUN mamba install --quiet --yes \
+    'cudatoolkit=10.2' \
+    'python=3.7' && \
+    mamba clean --all -f -y && \
+    pip install –no-cache-dir mxnet-cu102==1.7.0 autogluon & \
+    rm -fr ~/.cache & \
     fix-permissions "${CONDA_DIR}" && \
     fix-permissions "/home/${NB_USER}"
