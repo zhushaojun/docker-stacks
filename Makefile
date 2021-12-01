@@ -137,7 +137,7 @@ docs: ## build HTML documentation
 	sphinx-build docs/ docs/_build/
 
 
-hook/%: WIKI_PATH?=../wiki
+hook/%: WIKI_PATH?=./wiki
 hook/%: ## run post-build hooks for an image
 	python3 -m tagging.tag_image --short-image-name "$(notdir $@)" --owner "$(OWNER)" && \
 	python3 -m tagging.create_manifests --short-image-name "$(notdir $@)" --owner "$(OWNER)" --wiki-path "$(WIKI_PATH)"

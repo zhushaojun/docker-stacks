@@ -53,15 +53,15 @@ jobs:
         with:
           path: main
 
-      - name: Set Up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.x
+      # - name: Set Up Python
+      #   uses: actions/setup-python@v2
+      #   with:
+      #     python-version: 3.x
 
-      - name: Install Dev Dependencies
-        run: |
-          python -m pip install --upgrade pip
-          make -C main dev-env
+      # - name: Install Dev Dependencies
+      #   run: |
+      #     python -m pip install --upgrade pip
+      #     make -C main dev-env
 
       - name: Build Docker Images
         run: make -C main build-all
@@ -72,9 +72,9 @@ jobs:
       # - name: Test Docker Images
       #   run: make -C main test-all
 
-      - name: Run Post-Build Hooks
-        id: hook-all
-        run: make -C main hook-all
+      # - name: Run Post-Build Hooks
+      #   id: hook-all
+      #   run: make -C main hook-all
 
 
       - name: Login to Docker Hub
@@ -86,4 +86,4 @@ jobs:
 
       - name: Push Images to DockerHub
         if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main' || github.event_name == 'schedule'
-        run: make -C main push-all-multi
+        run: make -C main push-all
