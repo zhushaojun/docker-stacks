@@ -10,12 +10,12 @@ LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Install pytorch
-RUN mamba install --quiet --yes -c pytorch-lts \
+RUN conda install --quiet --yes -c pytorch \
     'pytorch' \
     'torchvision' \
     'torchaudio' \
     'cudatoolkit=10.2' && \
-    mamba clean --all -f -y
+    conda clean --all -f -y
 
 RUN mamba clean --all -f -y && \
     fix-permissions "${CONDA_DIR}" && \
